@@ -1,0 +1,734 @@
+// -----------------------------------------------------------------------------
+// HOMEPAGE
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    .homepage-slider{
+        height: 550px;
+
+        .slide{
+            position: relative;
+
+            .slide-img{
+                width: 55%;
+                height: 550px;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                border-top-left-radius: 300px;
+                border-bottom-left-radius: 300px;
+            }
+
+            .center-max-width{
+                height: 550px;
+                overflow: hidden;
+            }
+
+            .content{
+                width: 100%;
+                max-width: 450px;
+
+                .title{
+                    font-size: 2.4em;
+                    font-weight: 700;
+                    color: $text-color;
+                    line-height: 30px;
+                }
+            }
+        }
+
+        .slick-dots-position{
+            width: $default-width-center-percent;
+            height: 22px;
+            max-width: $default-max-width;
+            margin: auto;
+            position: relative;
+
+            .slick-dots{
+                width: 100%;
+                max-width: 450px;
+                bottom: 100px;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // ABOUT
+    // -----------------------------------------------------------------------------
+    .homepage-about{
+        .center-max-width{
+            overflow: hidden;
+        }
+
+        .img-decoration{
+            width: 650px;
+            height: auto;
+            position: relative;
+
+            &::before{
+                content: '';
+                width: 50%;
+                height: 70%;
+                position: absolute;
+                top: -20px;
+                right: 0px;
+                border: 2px solid $primary-color;
+                background: transparent;
+                z-index: 1;
+            }
+
+            &::after{
+                content: '';
+                width: 30%;
+                height: 30%;
+                position: absolute;
+                bottom: -20px;
+                left: 0px;
+                border: 2px solid $secondary-color;
+                background: transparent;
+                z-index: 1;
+            }
+
+            .about-img{
+                width: calc(100% - 60px);
+                height: auto;
+                position: relative;
+                z-index: 2;
+            }
+
+            .decoration-img{
+                position: absolute;
+                width: 20%;
+                height: auto;
+                bottom: -20px;
+                right: 10%;
+                z-index: 1;
+            }
+        }
+
+        .content{
+            width: calc(100% - 700px);
+
+            .title{
+                font-size: 2.2em;
+                font-weight: 600;
+                line-height: 25px;
+            }
+
+            .description{
+                font-size: 1.5em;
+                font-weight: 500;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SERVICES
+    // -----------------------------------------------------------------------------
+    .homepage-services{
+        background: $separator-color;
+
+        .description{
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .services{
+            .service{
+                width: 48%;
+                background: #ffffff;
+                position: relative;
+                @include border-radius(3px);
+                @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+
+                img{
+                    width: 220px;
+                    height: 220px;
+                    position: absolute;
+                    top: -30px;
+                    left: 30px;
+                    @include border-radius(3px);
+                }
+
+                .content{
+                    width: calc(100% - 250px);
+
+                    .service-title{
+                        font-size: 1.8em;
+                        font-weight: 600;
+                        color: $text-color;
+                    }
+
+                    .service-description{
+                        font-size: 1.5em;
+                        color: #909090;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // PRODUCTS
+    // -----------------------------------------------------------------------------
+    .homepage-products{
+        .description{
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .products-slider-container{
+            .products-slider{
+                .product{
+                    width: auto;
+                    height: 250px;
+                    @include border-radius(3px);
+                    border: 1px solid #f8f8f8;
+                    @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.09));
+    
+                    .product-img{
+                        width: 250px;
+                        height: 250px;
+                        position: relative;
+                        top: -100px;
+                        left: calc(50% - 125px);
+                        @include border-radius(3px);
+                        overflow: hidden;
+    
+                        &::before{
+                            content: '';
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 0px;
+                            left: 0px;
+                            bottom: 0px;
+                            right: 0px;
+                            background: $primary-color;
+                            opacity: 0;
+                            @include transition;
+                            z-index: 1;
+                        }
+    
+                        &::after{
+                            content: '';
+                            width: 50px;
+                            height: 50px;
+                            background: #ffffff;
+                            position: absolute;
+                            top: calc(50% - 25px);
+                            left: calc(50% - 25px);
+                            @include border-radius(50%);
+                            @include transition;
+                            @include scale(0);
+                            z-index: 2;
+                        }
+    
+                        img{
+                            width: 250px;
+                            height: 250px;
+                        }
+    
+                        svg{
+                            width: 25px;
+                            height: 25px;
+                            position: absolute;
+                            top: calc(50% - 12.3px);
+                            left: calc(50% - 12.3px);
+                            z-index: 3;
+                            opacity: 0;
+                            @include transition;
+    
+                            path{
+                                fill: $primary-color;
+                            }
+                        }
+    
+                        &:hover{
+                            &::before{
+                                opacity: 0.2;
+                            }
+    
+                            &::after{
+                                @include scale(1);
+                            }
+    
+                            svg{
+                                opacity: 1;
+                            }
+                        }
+                    }
+    
+                    .product-name{
+                        font-size: 1.8em;
+                        font-weight: 600;
+                        text-align: center;
+                        position: relative;
+                        top: -70px;
+                    }
+    
+                    .product-category{
+                        font-size: 1.3em;
+                        font-weight: 500;
+                        text-align: center;
+                        color: #909090;
+                        position: relative;
+                        top: -70px;
+    
+                        a{
+                            color: $secondary-color;
+                            text-decoration: underline;
+                            @include transition;
+    
+                            &:hover{
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+
+                .slick-list{
+                    margin: -20px -40px;
+                }
+
+                .slick-slide{
+                    margin: 20px 40px;
+                }
+
+                .slick-arrow.slick-prev{
+                    left: -20px
+                }
+
+                .slick-arrow.slick-next{
+                    right: -20px
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CLIENTS
+    // -----------------------------------------------------------------------------
+    .homepage-clients{
+        background: $separator-color;
+
+        .description{
+            max-width: 700px;
+            text-align: center;
+        }
+
+        .client-logos{
+            img{
+                width: auto;
+                height: 55px;
+            }
+        }
+    }
+
+// -----------------------------------------------------------------------------
+// HOMEPAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    .homepage-slider{
+        .slide{
+            position: relative;
+
+            .slide-img{
+                left: 0px;
+                right: auto;
+                border-top-right-radius: 300px;
+                border-bottom-right-radius: 300px;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+            }
+
+            .content{
+                .title{
+                    font-size: 1.9em;
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // ABOUT
+    // -----------------------------------------------------------------------------
+    .homepage-about{
+        .img-decoration{
+
+            &::before{
+                left: 0px;
+                right: auto;
+            }
+
+            &::after{
+                right: 0px;
+                left: auto;
+            }
+
+            .decoration-img{
+                left: 10%;
+                right: auto;
+            }
+        }
+
+        .content{
+            .title{
+                font-size: 2em;
+                line-height: 30px;
+            }
+
+            .description{
+                font-size: 1.4em;
+                line-height: 25px;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SERVICES
+    // -----------------------------------------------------------------------------
+    .homepage-services{
+        .services{
+            .service{
+                img{
+                    left: auto;
+                    right: 30px;
+                }
+
+                .content{
+                    .service-title{
+                        font-size: 1.5em;
+                    }
+
+                    .service-description{
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // PRODUCTS
+    // -----------------------------------------------------------------------------
+    .homepage-products{
+        .products-slider-container{
+            .products-slider{
+                .product{
+                    .product-img{
+                        right: calc(50% - 125px);
+                        left: auto;
+                    }
+    
+                    .product-name{
+                        font-size: 1.55em;
+                    }
+    
+                    .product-category{
+                        font-size: 1.2em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// HOMEPAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // SLIDER
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1250px){
+        .homepage-slider{
+            margin-top: 57px;
+        }
+
+        .homepage-slider .slide .slide-img{
+            width: 100%;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+
+        .rtl .homepage-slider .slide .slide-img{
+            width: 100%;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .homepage-slider .slide .slide-img::before,
+        .rtl .homepage-slider .slide .slide-img::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: rgba(94,94,94,0.3);
+            top: 0px;
+            left: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        .homepage-slider .slide .center-max-width{
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .homepage-slider .slide .content{
+            text-align: center;
+        }
+
+        .homepage-slider .slick-dots-position .slick-dots,
+        .rtl .homepage-slider .slick-dots-position .slick-dots{
+            max-width: 100%;
+            bottom: 50px;
+        }
+
+        .homepage-slider .slide .content .title{
+            color: #fff;
+        }
+
+        .homepage-slider .slide .content .description{
+            display: none;
+        }
+
+        .slick-dots li{
+            border: 1px solid #fff;
+        }
+
+        .slick-dots li button::before{
+            background: #fff;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // ABOUT
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .homepage-about{
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        .homepage-about .center-max-width{
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding-bottom: 0px;
+        }
+
+        .homepage-about .img-decoration,
+        .rtl .homepage-about .img-decoration{
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .homepage-about .content,
+        .rtl .homepage-about .content{
+            width: 100%;
+            max-width: 500px;
+            margin-top: 70px;
+            text-align: center;
+        }
+
+        .homepage-about .content a.btn.primary{
+            -ms-flex-item-align: center;
+            align-self: center;
+        }
+    }
+
+    @media only screen and (max-width: 700px){
+        .homepage-about .img-decoration .about-img{
+            width: calc(100% - 30px);
+            margin-left: 15px;
+        }
+
+        .rtl .homepage-about .img-decoration .about-img{
+            margin-right: 15px;
+            margin-left: 0px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SERVICES
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1340px){
+        .homepage-services .services{
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .homepage-services .services .service,
+        .rtl .homepage-services .services .service{
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .homepage-services .lined-title::before{
+            left: 20%;
+        }
+
+        .rtl .homepage-services .lined-title::before{
+            left: auto;
+            right: 20%;
+        }
+    }
+
+    @media only screen and (max-width: 700px){
+        .homepage-services .services .service{
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-top: 110px;
+        }
+
+        .homepage-services .services .service img{
+            width: 70%;
+            height: auto;
+            position: relative;
+            left: 0px;
+            top: -70px;
+        }
+
+        .rtl .homepage-services .services .service img{
+            right: 0px;
+            left: auto;
+        }
+
+        .homepage-services .services .service .content{
+            width: 100%;
+            position: relative;
+            top: -15px;
+        }
+
+        .homepage-services .services .service .content .service-title,
+        .homepage-services .services .service .content .service-description{
+            text-align: center;
+        }
+
+        .homepage-services .services .service .content .link-style{
+            -ms-flex-item-align: center;
+            align-self: center;
+        }
+    }
+
+    @media only screen and (max-width: 450px){
+        .homepage-services .services .service img{
+            width: 90%;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // PRODUCTS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .homepage-products .lined-title::before{
+            left: 20%;
+        }
+
+        .rtl .homepage-products .lined-title::before{
+            left: auto;
+            right: 20%;
+        }
+
+        .homepage-products .products-slider-container .products-slider .slick-list{
+            margin: -20px -20px;
+        }
+
+        .homepage-products .products-slider-container .products-slider .slick-slide{
+            margin: 20px 20px;
+        }
+
+        .rtl .slick-arrow.slick-prev{
+            transform: rotate(45deg);
+        }
+
+        .rtl .slick-arrow.slick-next {
+            transform: rotate(-135deg);
+        }
+
+        .rtl .homepage-products .products-slider-container .products-slider .slick-arrow.slick-prev{
+            right: -20px;
+            left: auto;
+        }
+
+        .rtl .homepage-products .products-slider-container .products-slider .slick-arrow.slick-next{
+            left: -20px;
+            right: auto;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .homepage-products .products-slider-container .products-slider .slick-arrow.slick-next{
+            right: -10px;
+        }
+
+        .homepage-products .products-slider-container .products-slider .slick-arrow.slick-prev{
+            left: -10px;
+        }
+
+        .rtl .homepage-products .products-slider-container .products-slider .slick-arrow.slick-prev{
+            right: -10px;
+            left: auto;
+        }
+
+        .rtl .homepage-products .products-slider-container .products-slider .slick-arrow.slick-next{
+            left: -10px;
+            right: auto;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CLIENTS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .homepage-clients .lined-title::before{
+            left: 20%;
+        }
+
+        .rtl .homepage-clients .lined-title::before{
+            left: auto;
+            right: 20%;
+        }
+    }
+
+    @media only screen and (max-width: 1000px){
+        .homepage-clients .client-logos img{
+            width: auto;
+            height: 40px;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .homepage-clients .client-logos img{
+            width: auto;
+            height: 40px;
+        }
+    }

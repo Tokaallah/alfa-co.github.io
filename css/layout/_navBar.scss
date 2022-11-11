@@ -1,0 +1,555 @@
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR
+// -----------------------------------------------------------------------------
+.desktop-navigation-bar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 100px;
+    background: #ffffff;
+    @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+    @include transition;
+    z-index: 999;
+
+    .logo{
+        width: auto;
+        height: 70px;
+        @include transition;
+    }
+
+    .top-bar-navigation-bar{
+        width: calc(100% - 300px);
+        height: 100px;
+
+        .top-bar{
+            height: 45px;
+            background: $top-bar-color;
+            border-bottom-left-radius: 25px;
+            position: relative;
+
+            &::before{
+                content: '';
+                width: 500%;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                left: 100%;
+                background: $top-bar-color;
+            }
+
+            .contact-info{
+                a{
+                    svg{
+                        width: 20px;
+                        height: 20px;
+
+                        path{
+                            fill: $text-color;
+                            @include transition;
+                        }
+                    }
+
+                    span{
+                        color: $text-color;
+                        font-size: 1.4em;
+                        @include transition;
+                    }
+
+                    &:hover{
+                        svg{
+                            path{
+                                fill: $primary-color;
+                            }
+                        }
+
+                        span{
+                            color: $primary-color;
+                        }
+                    }
+                }
+            }
+
+            .social-media{
+                span{
+                    color: $text-color;
+                    font-size: 1.3em;
+                }
+
+                a{
+                    i{
+                        font-size: 1.9em;
+                        color: $text-color;
+                        opacity: 0.5;
+                        @include transition;
+                    }
+
+                    &:hover{
+                        i{
+                            color: $primary-color;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            .language-switcher{
+                position: relative;
+                cursor: pointer;
+
+                .current-lang-flag{
+                    width: 26px;
+                    height: 26px;
+                }
+
+                .current-lang{
+                    font-size: 1.4em;
+                    color: $text-color;
+
+                    i{
+                        font-size: 0.8em;
+                        color: $text-color;
+                    }
+                }
+
+                .languages-list{
+                    width: 150px;
+                    height: auto;
+                    background: #ffffff;
+                    position: absolute;
+                    top: calc(100% + 30px);
+                    right: 0px;
+                    visibility: hidden;
+                    opacity: 0;
+                    @include border-radius(3px);
+                    @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                    @include transition;
+                    z-index: 999;
+
+                    &::before{
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        display: block;
+                        background: #ffffff;
+                        position: absolute;
+                        top: -5px;
+                        right: 15px;
+                        @include border-radius(3px);
+                        @include rotate(45deg);
+                        @include box-shadow(0px, 0px, 50px, 0px, rgba(82,63,105,0.1));
+                    }
+
+                    a{
+                        width: 100%;
+                        white-space: nowrap;
+                        position: relative;
+                        text-decoration: none;
+                        @include border-radius(3px);
+                        @include transition;
+
+                        svg{
+                            width: 25px;
+                            height: 25px;
+                        }
+
+                        span{
+                            width: calc(100% - 40px);
+                            text-decoration: none;
+                            font-size: 1.5em;
+                            color: $text-color;
+                            font-weight: 500;
+                            @include transition;
+                        }
+
+                        &:last-child{
+                            span{
+                                font-size: 1.3em;
+                            }
+                        }
+
+                        &:hover{
+                            background: $separator-color;
+                        }
+                    }
+                }
+
+                &.show{
+                    .languages-list{
+                        visibility: visible;
+                        opacity: 1;
+                        @include translate(0, -20px);
+                    }
+                }
+            }
+        }
+
+        .navigation-bar{
+            height: 55px;
+
+            nav{
+                height: inherit;
+
+                .lvl-one-menu{
+                    height: inherit;
+                    
+                    .lvl-one-menu-link{
+                        position: relative;
+
+                        .menu-link{
+                            height: 100%;
+                            font-size: 1.6em;
+                            font-weight: 500;
+                            color: $text-color;
+                            @include transition;
+
+                            i{
+                                color: $text-color;
+                                font-size: 0.8em;
+                                @include transition;
+                            }
+                        }
+
+                        &::after{
+                            content: '';
+                            width: 0px;
+                            height: 3px;
+                            position: absolute;
+                            bottom: 0px;
+                            left: 0px;
+                            right: 0px;
+                            background: $primary-color;
+                            @include transition;
+                        }
+
+                        &:hover{
+                            .menu-link{
+                                color: $primary-color;
+
+                                i{
+                                    color: $primary-color;
+                                }
+                            }
+
+                            &::after{
+                                width: 100%;
+                            }
+
+                            .lvl-two-menu, .mega-menu{
+                                visibility: visible;
+                                opacity: 1;
+                                @include translate(0px, -20px);
+                            }
+                        }
+
+                        &.active{
+                            .menu-link{
+                                color: $primary-color;
+                                font-weight: 600;
+
+                                i{
+                                    color: $primary-color;
+                                }
+                            }
+
+                            &::after{
+                                width: 100%;
+                            }
+                        }
+
+                        &.hamburger-menu{
+                            width: 30px;
+                            height: 25px;
+                            position: relative;
+                            cursor: pointer;
+                            display: none;
+
+                            span{
+                                width: 100%;
+                                height: 2px;
+                                background: $text-color;
+
+                                &::before{
+                                    content: '';
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 2px;
+                                    top: 0px;
+                                    left: auto;
+                                    right: auto;
+                                    background: $text-color;
+                                }
+
+                                &::after{
+                                    content: '';
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 2px;
+                                    bottom: 0px;
+                                    left: auto;
+                                    right: auto;
+                                    background: $text-color;
+                                }
+                            }
+
+                            &::after{
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .lvl-two-menu{
+                        width: auto;
+                        height: auto;
+                        background: #ffffff;
+                        position: absolute;
+                        top: calc(100% + 20px);
+                        left: 0px;
+                        visibility: hidden;
+                        opacity: 0;
+                        @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                        @include transition;
+        
+                        .lvl-two-menu-link{
+                            width: 100%;
+                            white-space: nowrap;
+                            border-bottom: 1px solid #e2e2e2;
+                            position: relative;
+                            @include transition;
+        
+                            &:last-child{
+                                border-bottom: 0px;
+                            }
+        
+                            .link{
+                                width: 100%;
+                                text-decoration: none;
+                                font-size: 1.35em;
+                                color: $text-color;
+                                font-weight: 500;
+                                @include transition;
+                            }
+        
+                            &:hover{
+                                background: $secondary-color;
+        
+                                .link{
+                                    color: #ffffff;
+                                }
+                            }
+        
+                            &.active{
+                                background: $secondary-color;
+        
+                                .link{
+                                    color: #ffffff;
+                                }
+                            }
+                        }
+                    }
+
+                    .mega-menu{
+                        width: 450px;
+                        height: auto;
+                        background: #ffffff;
+                        position: absolute;
+                        top: calc(100% + 20px);
+                        left: 0px;
+                        visibility: hidden;
+                        opacity: 0;
+                        @include box-shadow(0px, 0px, 15px, 0px, rgba(94,94,94,0.15));
+                        @include transition;
+
+                        &::before{
+                            content: '';
+                            width: 1px;
+                            height: 85%;
+                            background: #eeeeee;
+                            position: absolute;
+                            left: calc(50% - 0.5px);
+                            top: 7.5%;
+                            bottom: 7.5%;
+                        }
+
+                        li{
+                            width: 50%;
+
+                            a{
+                                font-size: 1.35em;
+                                color: $text-color;
+                                font-weight: 500;
+                                @include transition;
+
+                                &:hover{
+                                    color: $secondary-color;
+                                }
+                            }
+
+                            &.active{
+                                a{
+                                    color: $secondary-color;
+                                    font-weight: 600;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.scrolled{
+        @include translate(0px, -45px);
+
+        .logo{
+            height: 40px;
+            @include translate(0px, 22.5px);
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .desktop-navigation-bar{
+        .top-bar-navigation-bar{
+            .top-bar{
+                border-bottom-right-radius: 25px;
+                border-bottom-left-radius: 0px;
+    
+                &::before{
+                    right: 100%;
+                    left: auto;
+                }
+    
+                .contact-info{
+                    a{
+                        svg{
+                            @include flip-image;
+                        }
+                    }
+                }
+    
+                .social-media{
+                    span{
+                        font-size: 1.25em;
+                    }
+                }
+    
+                .language-switcher{
+                    .current-lang{
+                        font-size: 1.3em;
+                    }
+    
+                    .languages-list{
+                        left: 0px;
+                        right: auto;
+    
+                        &::before{
+                            left: 15px;
+                            right: auto;
+                        }
+    
+                        a{
+                            span{
+                                font-size: 1.4em;
+                            }
+    
+                            &:last-child{
+                                span{
+                                    font-size: 1.3em;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            .navigation-bar{
+                nav{
+                    .lvl-one-menu{
+                        .lvl-one-menu-link{
+                            .menu-link{
+                                font-size: 1.4em;
+                            }
+                        }
+    
+                        .lvl-two-menu{
+                            right: 0px;
+                            left: auto;
+            
+                            .lvl-two-menu-link{
+                                .link{
+                                    font-size: 1.25em;
+                                }
+                            }
+                        }
+    
+                        .mega-menu{
+                            width: 400px;
+                            right: 0px;
+                            left: auto;
+    
+                            &::before{
+                                right: calc(50% - 0.5px);
+                                left: auto;
+                            }
+    
+                            li{
+                                a{
+                                    font-size: 1.25em;
+                                }
+
+                                &.active{
+                                    font-weight: 600;
+                                    color: $secondary-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// NAVIGATION BAR (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1250px){
+    .desktop-navigation-bar{
+        -webkit-transform: translate(0px, -45px);
+        transform: translate(0px, -45px);
+    }
+
+    .desktop-navigation-bar .top-bar-navigation-bar{
+        width: auto;
+    }
+
+    .desktop-navigation-bar .top-bar-navigation-bar .navigation-bar{
+        -webkit-transform: translate(0px, 45px);
+        transform: translate(0px, 45px);
+    }
+
+    .desktop-navigation-bar .top-bar-navigation-bar .top-bar{
+        display: none;
+    }
+
+    .desktop-navigation-bar .top-bar-navigation-bar .navigation-bar nav .lvl-one-menu .lvl-one-menu-link{
+        display: none;
+    }
+
+    .desktop-navigation-bar .top-bar-navigation-bar .navigation-bar nav .lvl-one-menu .lvl-one-menu-link.hamburger-menu{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+    }
+
+    .desktop-navigation-bar .logo{
+        height: 40px;
+        -webkit-transform: translate(0px, 22.5px);
+        transform: translate(0px, 22.5px);
+    }
+}

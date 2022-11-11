@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// CLIENTS PAGE
+// -----------------------------------------------------------------------------
+.clients-page{
+    .description{
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .client-logos{
+        img{
+            width: auto;
+            height: 55px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// CLIENTS PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+
+}
+
+// -----------------------------------------------------------------------------
+// CLIENTS PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .clients-page .lined-title::before{
+        left: 20%;
+    }
+
+    .rtl .clients-page .lined-title::before{
+        left: auto;
+        right: 20%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .clients-page .client-logos img{
+        width: auto;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .clients-page .client-logos img{
+        width: auto;
+        height: 40px;
+    }
+}

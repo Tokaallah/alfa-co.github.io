@@ -1,0 +1,523 @@
+// -----------------------------------------------------------------------------
+// FOOTER
+// -----------------------------------------------------------------------------
+    .footer{
+
+        // -----------------------------------------------------------------------------
+        // CONTACT INFO
+        // -----------------------------------------------------------------------------
+        .contact-info{
+            .col{
+                width: 30%;
+
+                .lined-title{
+                    &::before{
+                        width: 40%;
+                    }
+
+                    span{
+                        font-size: 2em;
+                    }
+                }
+
+                .info{
+                    a{
+                        text-decoration: none;
+        
+                        svg{
+                            width: 22px;
+                            height: 22px;
+                        }
+        
+                        span{
+                            width: calc(100% - 37px);
+                            font-size: 1.4em;
+                            line-height: 20px;
+                            color: #808080;
+                            @include transition;
+                        }
+        
+                        &:hover{
+                            span{
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // CONTACT PEPOLE
+        // -----------------------------------------------------------------------------
+        .contact-people{
+            border-top: 1px solid #e8e8e8;
+
+            .contact-person{
+                width: 100%;
+                max-width: 300px;
+
+                .lined-title{
+                    &::before{
+                        width: 40%;
+                    }
+
+                    span{
+                        color: $text-color;
+                        font-size: 1.7em;
+                        font-weight: 600;
+                    }
+                }
+
+                .person-name{
+                    font-size: 1.5em;
+                    font-weight: 700;
+                    color: $primary-color;
+                }
+
+                .info{
+                    a{
+                        text-decoration: none;
+        
+                        svg{
+                            width: 22px;
+                            height: 22px;
+                        }
+        
+                        span{
+                            width: calc(100% - 37px);
+                            font-size: 1.4em;
+                            line-height: 20px;
+                            color: #808080;
+                            @include transition;
+                        }
+        
+                        &:hover{
+                            span{
+                                color: $primary-color;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // COPRIGHTS
+        // -----------------------------------------------------------------------------
+        .copyrights{
+            background: $primary-color;
+
+            p{
+                font-size: 1.35em;
+                font-weight: 500;
+                color: #ffffff;
+                line-height: normal;
+            }
+
+            .social-media{
+                a{
+                    i{
+                        font-size: 1.7em;
+                        color: #ffffff;
+                    }
+                }
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // GOOGLE MAPS
+    // -----------------------------------------------------------------------------
+    .google-maps{
+        #google-maps{
+            width: 100%;
+            height: 500px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CONTACT FORM & SUBSCRIBE TO NEWSLETTER FORM
+    // -----------------------------------------------------------------------------
+    .contact-form-subscribe-to-newsletter-form{
+        .center-max-width{
+            position: relative;
+        }
+
+        // -----------------------------------------------------------------------------
+        // CONTACT FORM
+        // -----------------------------------------------------------------------------
+        .contact-form{
+            width: 55%;
+            background: #ffffff;
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+            @include border-radius(3px);
+            position: absolute;
+            left: 0px;
+            top: -335px;
+
+            .lined-title{
+                &::before{
+                    width: 40%;
+                }
+
+                span{
+                    font-size: 2.4em;
+                }
+            }
+
+            .form-row{
+                width: 48%;
+
+                &.message-textarea,
+                &.submit-btn{
+                    width: 100%;
+
+                    button[type="submit"]{
+                        width: 100%;
+                    }
+                }
+
+                .message-type{
+                    width: 100%;
+                }
+
+                .select2-container{
+                    width: 100% !important;
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // SUBSCRIBE TO NEWSLETTER FORM
+        // -----------------------------------------------------------------------------
+        .subscribe-to-newsletter-form{
+            width: 40%;
+
+            .lined-title{
+                &::before{
+                    width: 40%;
+                }
+
+                span{
+                    font-size: 2.4em;
+                }
+            }
+
+            .description{
+                font-size: 1.5em;
+            }
+        }
+    }
+
+
+// -----------------------------------------------------------------------------
+// FOOTER (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .footer{
+
+        // -----------------------------------------------------------------------------
+        // CONTACT INFO
+        // -----------------------------------------------------------------------------
+        .contact-info{
+            .col{
+                .lined-title{
+                    span{
+                        font-size: 1.7em;
+                    }
+                }
+
+                .info{
+                    a{
+                        span{
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // CONTACT PEPOLE
+        // -----------------------------------------------------------------------------
+        .contact-people{
+            .contact-person{
+                .lined-title{
+                    span{
+                        font-size: 1.5em;
+                    }
+                }
+
+                .person-name{
+                    font-size: 1.3em;
+                }
+
+                .info{
+                    a{
+                        span{
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // COPYRIGHTS
+        // -----------------------------------------------------------------------------
+        .copyrights{
+            p{
+                font-size: 1.2em;
+            }
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CONTACT FORM & SUBSCRIBE TO NEWSLETTER FORM
+    // -----------------------------------------------------------------------------
+    .contact-form-subscribe-to-newsletter-form{
+
+        // -----------------------------------------------------------------------------
+        // CONTACT FORM
+        // -----------------------------------------------------------------------------
+        .contact-form{
+            right: 0px;
+            left: auto;
+            top: -357px;
+
+            .lined-title{
+                span{
+                    font-size: 2em;
+                }
+            }
+        }
+
+        // -----------------------------------------------------------------------------
+        // SUBSCRIBE TO NEWSLETTER FORM
+        // -----------------------------------------------------------------------------
+        .subscribe-to-newsletter-form{
+            .lined-title{
+                span{
+                    font-size: 2em;
+                }
+            }
+
+            .description{
+                font-size: 1.3em;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FOOTER (RESPONSIVE)
+// -----------------------------------------------------------------------------
+
+    // -----------------------------------------------------------------------------
+    // FOOTER
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1335px){
+        .footer .contact-people .contact-person .lined-title::before{
+            left: 30%;
+        }
+
+        .rtl .footer .contact-people .contact-person .lined-title::before{
+            right: 30%;
+            left: auto;
+        }
+    }
+
+    @media only screen and (max-width: 900px){
+        .footer .contact-info{
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding-top: 0px;
+        }
+        
+        .footer .contact-info .col{
+            width: 100%;
+            max-width: 700px;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            margin-top: 40px;
+        }
+    
+        .footer .contact-info .col .lined-title::before{
+            left: 30%;
+        }
+
+        .rtl .footer .contact-info .col .lined-title::before{
+            right: 30%;
+            left: auto;
+        }
+    
+        .footer .contact-info .col .info a{
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            margin-top: 20px;
+        }
+    
+        .footer .contact-info .col .info a span{
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+            margin-left: 0px;
+        }
+
+        .rtl .footer .contact-info .col .info a span{
+            margin-right: 0px;
+        }
+    }
+
+    @media only screen and (max-width: 500px){
+        .footer .contact-people .contact-person{
+            max-width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // COPYRIGHTS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 600px){
+        .copyrights .center-max-width{
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+        .footer .copyrights p{
+            margin-bottom: 10px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // GOOGLE MAPS
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .google-maps #google-maps{
+            height: 400px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // CONTACT FORM & SUBSCRIBE TO NEWSLETTER FORM
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .contact-form-subscribe-to-newsletter-form{
+            padding-top: 70px;
+        }
+
+        .contact-form-subscribe-to-newsletter-form .center-max-width{
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+    }
+    
+    // -----------------------------------------------------------------------------
+    // CONTACT FORM
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .contact-form-subscribe-to-newsletter-form .contact-form,
+        .rtl .contact-form-subscribe-to-newsletter-form .contact-form{
+            position: static;
+            width: 100%;
+            max-width: 700px;
+            left: auto;
+            top: auto;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .contact-form-subscribe-to-newsletter-form .contact-form .lined-title::before{
+            width: 60%;
+            left: 20%;
+        }
+
+        .rtl .contact-form-subscribe-to-newsletter-form .contact-form .lined-title::before{
+            width: 60%;
+            right: 20%;
+            left: auto;
+        }
+    }
+
+    @media only screen and (max-width: 600px){
+        .contact-form-subscribe-to-newsletter-form .contact-form .form-row{
+            width: 100%;
+        }
+
+        .contact-form-subscribe-to-newsletter-form .contact-form{
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // SUBSCRIBE TO NEWSLETTER FORM
+    // -----------------------------------------------------------------------------
+    @media only screen and (max-width: 1200px){
+        .contact-form-subscribe-to-newsletter-form .subscribe-to-newsletter-form{
+            width: 100%;
+            max-width: 700px;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -ms-flex-item-align: center;
+            align-self: center;
+            margin-top: 70px;
+        }
+
+        .contact-form-subscribe-to-newsletter-form .subscribe-to-newsletter-form .lined-title::before{
+            width: 60%;
+            left: 20%;
+        }
+
+        .rtl .contact-form-subscribe-to-newsletter-form .subscribe-to-newsletter-form .lined-title::before{
+            width: 60%;
+            right: 20%;
+            left: auto;
+        }
+
+        .contact-form-subscribe-to-newsletter-form .subscribe-to-newsletter-form .description{
+            max-width: 400px;
+            text-align: center;
+        }
+    }
+    

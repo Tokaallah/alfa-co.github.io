@@ -1,0 +1,149 @@
+// -----------------------------------------------------------------------------
+// SERVICES PAGE
+// -----------------------------------------------------------------------------
+.services-page{
+    .description{
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .services{
+        .service{
+            width: 48%;
+            background: #ffffff;
+            position: relative;
+            @include border-radius(3px);
+            @include box-shadow(0px, 0px, 50px, 0px, rgba(94,94,94,0.1));
+
+            img{
+                width: 220px;
+                height: 220px;
+                position: absolute;
+                top: -30px;
+                left: 30px;
+                @include border-radius(3px);
+            }
+
+            .content{
+                width: calc(100% - 250px);
+
+                .service-title{
+                    font-size: 1.8em;
+                    font-weight: 600;
+                    color: $text-color;
+                }
+
+                .service-description{
+                    font-size: 1.5em;
+                    color: #909090;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SERVICES PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .services-page{
+        .services{
+            .service{
+                img{
+                    left: auto;
+                    right: 30px;
+                }
+
+                .content{
+                    .service-title{
+                        font-size: 1.5em;
+                    }
+
+                    .service-description{
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SERVICES PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1340px){
+    .services-page .services{
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    .services-page .services .service,
+    .rtl .services-page .services .service{
+        width: 100%;
+        max-width: 600px;
+    }
+
+    .services-page .lined-title::before{
+        left: 20%;
+    }
+
+    .rtl .services-page .lined-title::before{
+        left: auto;
+        right: 20%;
+    }
+}
+
+@media only screen and (max-width: 700px){
+    .services-page .services .service{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-top: 110px;
+    }
+
+    .services-page .services .service img{
+        width: 70%;
+        height: auto;
+        position: relative;
+        left: 0px;
+        top: -70px;
+    }
+
+    .rtl .services-page .services .service img{
+        right: 0px;
+        left: auto;
+    }
+
+    .services-page .services .service .content{
+        width: 100%;
+        position: relative;
+        top: -15px;
+    }
+
+    .services-page .services .service .content .service-title,
+    .services-page .services .service .content .service-description{
+        text-align: center;
+    }
+
+    .services-page .services .service .content .link-style{
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+}
+
+@media only screen and (max-width: 450px){
+    .services-page .services .service img{
+        width: 90%;
+    }
+}

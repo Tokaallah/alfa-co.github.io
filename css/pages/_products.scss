@@ -1,0 +1,311 @@
+// -----------------------------------------------------------------------------
+// PRODUCTS PAGE
+// -----------------------------------------------------------------------------
+.products-page{
+    .center-max-width{
+        overflow: hidden;
+    }
+
+    // -----------------------------------------------------------------------------
+    // FILTERATION
+    // -----------------------------------------------------------------------------
+    .filteration{
+        width: 300px;
+
+        .main-title{
+            font-size: 2.4em;
+            font-weight: 600;
+            color: $primary-color;
+        }
+
+        .form-title{
+            font-size: 1.8em;
+            font-weight: 600;
+            color: $secondary-color;
+        }
+
+        .checkbox{
+            width: 100%;
+            height: auto;
+            position: relative;
+
+            .checkbox-input{
+                width: 35px;
+                height: 16px;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                @include appearance(none);
+                box-shadow: none;
+                outline: none;
+                cursor: pointer;
+
+                &::before{
+                    content: '';
+                    width: 35px;
+                    height: 16px;
+                    position: absolute;
+                    left: 0px;
+                    border: 1px solid #c8c8c8;
+                    @include border-radius(3px);
+                }
+
+                &::after{
+                    content: '';
+                    width: calc(33px / 2);
+                    height: 14px;
+                    background: #dfdfdf;
+                    position: absolute;
+                    left: 2px;
+                    top: 2px;
+                    @include border-radius(3px);
+                    @include transition;
+                }
+
+                &:checked{
+                    &::after{
+                        background: $primary-color;
+                        @include translate(100%, 0px);
+                    }
+
+                    & ~ .checkbox-label{
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            .checkbox-label{
+                font-size: 1.45em;
+                font-weight: 500;
+                color: #909090;
+                @include transition;
+                cursor: pointer;
+            }
+        }
+
+        button[type="submit"]{
+            width: 100%;
+        }
+    }
+
+    // -----------------------------------------------------------------------------
+    // PRODUCTS
+    // -----------------------------------------------------------------------------
+    .products{
+        width: calc(100% - 300px);
+        
+        .product{
+            width: calc(100% / 3);
+            border: 0.5px solid #f1f1f1;
+
+            .product-img{
+                width: 90%;
+                height: auto;
+                position: relative;
+                @include border-radius(3px);
+                overflow: hidden;
+
+                &::before{
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    bottom: 0px;
+                    right: 0px;
+                    background: $primary-color;
+                    opacity: 0;
+                    @include transition;
+                    z-index: 1;
+                }
+
+                &::after{
+                    content: '';
+                    width: 50px;
+                    height: 50px;
+                    background: #ffffff;
+                    position: absolute;
+                    top: calc(50% - 25px);
+                    left: calc(50% - 25px);
+                    @include border-radius(50%);
+                    @include transition;
+                    @include scale(0);
+                    z-index: 2;
+                }
+
+                img{
+                    width: 100%;
+                    height: auto;
+                }
+
+                svg{
+                    width: 25px;
+                    height: 25px;
+                    position: absolute;
+                    top: calc(50% - 12.3px);
+                    left: calc(50% - 12.3px);
+                    z-index: 3;
+                    opacity: 0;
+                    @include transition;
+
+                    path{
+                        fill: $primary-color;
+                    }
+                }
+
+                &:hover{
+                    &::before{
+                        opacity: 0.2;
+                    }
+
+                    &::after{
+                        @include scale(1);
+                    }
+
+                    svg{
+                        opacity: 1;
+                    }
+                }
+            }
+
+            .product-name{
+                font-size: 1.6em;
+                font-weight: 600;
+                text-align: center;
+            }
+
+            .product-category{
+                font-size: 1.3em;
+                font-weight: 500;
+                text-align: center;
+                color: #909090;
+
+                a{
+                    color: $secondary-color;
+                    text-decoration: underline;
+                    @include transition;
+
+                    &:hover{
+                        color: $primary-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// PRODUCTS PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .products-page{
+
+        // -----------------------------------------------------------------------------
+        // FILTERATION
+        // -----------------------------------------------------------------------------
+        .filteration{
+            .main-title{
+                font-size: 2em;
+            }
+    
+            .form-title{
+                font-size: 1.4em;
+            }
+    
+            .checkbox{
+                .checkbox-input{
+                    right: 0px;
+                    left: auto;
+    
+                    &::before{
+                        right: 0px;
+                        left: auto;
+                    }
+    
+                    &::after{
+                        right: 2px;
+                        left: auto;
+                    }
+    
+                    &:checked{
+                        &::after{
+                            @include translate(-100%, 0px);
+                        }
+                    }
+                }
+    
+                .checkbox-label{
+                    font-size: 1.25em;
+                }
+            }
+        }
+    
+        // -----------------------------------------------------------------------------
+        // PRODUCTS
+        // -----------------------------------------------------------------------------
+        .products{
+            .product{
+                .product-img{
+                    &::after{
+                        right: calc(50% - 25px);
+                        left: auto;
+                    }
+    
+                    svg{
+                        right: calc(50% - 12.3px);
+                        left: auto;
+                    }
+                }
+    
+                .product-name{
+                    font-size: 1.35em;
+                }
+    
+                .product-category{
+                    font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// PRODUCTS PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1300px){
+    .products-page .filteration{
+        width: 200px;
+    }
+
+    .products-page .products{
+        width: calc(100% - 200px);
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .products-page .filteration{
+        display: none;
+    }
+
+    .products-page .products{
+        width: 100%;
+        padding-left: 0px;
+    }
+
+    .rtl .products-page .products{
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 950px){
+    .products-page .products .product{
+        width: calc(100% / 2);
+    }
+}
+
+@media only screen and (max-width: 650px){
+    .products-page .products .product{
+        width: 100%;
+    }
+}

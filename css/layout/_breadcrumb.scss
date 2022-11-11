@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// BREADCRUMB
+// -----------------------------------------------------------------------------
+.breadcrumb{
+    background: $separator-color;
+
+    .page-title{
+        font-size: 1.8em;
+        font-weight: 700;
+        color: $secondary-color;
+    }
+
+    nav{
+        a{
+            text-decoration: none;
+            font-size: 1.3em;
+            font-weight: 500;
+            color: $text-color;
+            @include transition;
+            line-height: 30px;
+
+            &.active{
+                font-weight: 600;
+                text-decoration: underline;
+            }
+
+            &:hover{
+                color: $primary-color;
+                text-decoration: underline;
+            }
+        }
+
+        i{
+            font-size: 1.1em;
+            color: $text-color;
+            line-height: 30px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BREADCRUMB (RTL)
+// -----------------------------------------------------------------------------
+
+// -----------------------------------------------------------------------------
+// BREADCRUMB (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1250px){
+    .breadcrumb{
+        margin-top: 56px;
+    }
+}

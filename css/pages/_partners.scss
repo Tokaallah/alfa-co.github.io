@@ -1,0 +1,51 @@
+// -----------------------------------------------------------------------------
+// PARTNERS PAGE
+// -----------------------------------------------------------------------------
+.partners-page{
+    .description{
+        max-width: 700px;
+        text-align: center;
+    }
+
+    .client-logos{
+        img{
+            width: auto;
+            height: 55px;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// PARTNERS PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+
+}
+
+// -----------------------------------------------------------------------------
+// PARTNERS PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1200px){
+    .partners-page .lined-title::before{
+        left: 20%;
+    }
+
+    .rtl .partners-page .lined-title::before{
+        left: auto;
+        right: 20%;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .partners-page .client-logos img{
+        width: auto;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .partners-page .client-logos img{
+        width: auto;
+        height: 40px;
+    }
+}

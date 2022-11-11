@@ -1,0 +1,116 @@
+// -----------------------------------------------------------------------------
+// BUTTONS
+// -----------------------------------------------------------------------------
+.btn{
+    width: auto;
+    height: auto;
+    background: $primary-color;
+    color: #ffffff;
+    @include appearance(none);
+    cursor: pointer;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    @include appearance(none);
+    border: none;
+    @include border-radius(3px);
+    cursor: pointer;
+    font-family: $primary-font-family, $secondary-font-family;
+    font-weight: 500;
+    font-size: 1.4em;
+    padding: 15px 25px;
+    @include transition;
+
+    svg{
+        width: 18px;
+        height: 18px;
+
+        path{
+            fill: #ffffff;
+        }
+    }
+
+    &:hover{
+        background: $primary-color-dark;
+    }
+}
+
+.link-style{
+    width: auto;
+    height: 30px;
+    line-height: 30px;
+    background: transparent;
+    color: $secondary-color;
+    @include appearance(none);
+    cursor: pointer;
+    font-family: $primary-font-family, $secondary-font-family;
+    font-weight: 500;
+    font-size: 1.4em;
+    @include transition;
+    position: relative;
+
+    span{
+        position: relative;
+        z-index: 1;
+    }
+
+    &::before{
+        content: '';
+        width: 0px;
+        height: 100%;
+        background: $primary-color;
+        position: absolute;
+        top: 0px;
+        left: -15px;
+        opacity: 0.1;
+        @include transition;
+        z-index: 0;
+    }
+
+    svg{
+        width: 18px;
+        height: 18px;
+        position: relative;
+        z-index: 1;
+
+        path{
+            @include transition;
+            fill: $secondary-color;
+        }
+    }
+
+    &:hover{
+        &::before{
+            width: 60%;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .btn{
+        font-size: 1.3em;
+
+        svg{
+            @include flip-image;
+        }
+    }
+    
+    .link-style{
+        font-size: 1.3em;
+
+        &::before{
+            right: -15px;
+            left: auto;
+        }
+
+        svg{
+            @include flip-image;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// BUTTONS (RESPONSIVE)
+// -----------------------------------------------------------------------------

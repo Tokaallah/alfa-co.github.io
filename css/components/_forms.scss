@@ -1,0 +1,178 @@
+// -----------------------------------------------------------------------------
+// FORMS
+// -----------------------------------------------------------------------------
+form{
+    .form-row{
+        input{
+            width: 100%;
+            height: 45px;
+            padding: 10px 15px;
+            font-family: $primary-font-family, $secondary-font-family;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid #cccdcd;
+            @include border-radius(3px);
+            outline: none;
+            @include transition;
+            line-height: 45px;
+            @include appearance(none);
+        
+            &:focus{
+                border: 1px solid $primary-color;
+            }
+        }
+    
+        textarea{
+            width: 100%;
+            height: 200px;
+            padding: 10px 15px;
+            font-family: $primary-font-family, $secondary-font-family;
+            font-size: 1.5em;
+            font-weight: 500;
+            color: $text-color;
+            background: transparent;
+            border: 1px solid #cccdcd;
+            @include border-radius(3px);
+            outline: none;
+            @include transition;
+            line-height: normal;
+            resize: none;
+            @include appearance(none);
+        
+            &:focus{
+                border: 1px solid $primary-color;
+            }
+        }
+    }
+}
+
+.submit-on-one-line{
+    width: 100%;
+    position: relative;
+
+    .form-row{
+        &.with-icon{
+            input{
+                padding-right: 210px;
+            }
+        }
+
+        &:last-child{
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+        }
+
+        button[type="submit"]{
+            height: 100%;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+        }
+    }
+}
+
+@include placeholder{
+    font-family: $primary-font-family, $secondary-font-family;
+    font-size: inherit;
+    font-weight: 400;
+    color: #aaaaaa;
+    @include transition;
+}
+
+@include placeholder-focus{
+    color: transparent !important;
+}
+
+// -----------------------------------------------------------------------------
+// FORMS (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    form{
+        .form-row{
+            input{
+                font-size: 1.35em;
+            }
+        
+            textarea{
+                font-size: 1.35em;
+            }
+        }
+    }
+    
+    .submit-on-one-line{
+        .form-row{
+            &.with-icon{
+                input{
+                    padding-left: 210px;
+                    padding-right: 15px;
+                }
+            }
+    
+            &:last-child{
+                left: 0px;
+                right: auto;
+            }
+    
+            button[type="submit"]{
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+
+                span, svg{
+                    position: relative;
+                    top: -5px;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// FORMS (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 600px){
+    .submit-on-one-line .form-row.with-icon input{
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom: none;
+        padding-right: 15px !important;
+    }
+
+    .rtl .submit-on-one-line .form-row.with-icon input{
+        padding-right: 15px !important;
+        padding-left: 15px;
+    }
+
+    .submit-on-one-line .form-row:last-child{
+        position: static;
+        width: 100%;
+    }
+
+    .submit-on-one-line .form-row button[type="submit"],
+    .rtl .submit-on-one-line .form-row button[type="submit"]{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        width: 100%;
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    .submit-on-one-line .form-row button[type="submit"] span{
+        position: relative;
+        top: 3px;
+    }
+
+    .rtl .submit-on-one-line .form-row button[type="submit"] span, 
+    .rtl .submit-on-one-line .form-row button[type="submit"] svg{
+        top: 0px;
+    }
+}

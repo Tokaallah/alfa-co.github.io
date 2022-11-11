@@ -1,0 +1,62 @@
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY
+// -----------------------------------------------------------------------------
+a{
+    text-decoration: none;
+    @include transition;
+}
+
+p{
+    font-size: 1.55em;
+    line-height: 20px;
+}
+
+.lined-title{
+    text-align: center;
+    position: relative;
+
+    &::before{
+        content: '';
+        width: 60%;
+        height: 10px;
+        background: $secondary-color;
+        position: absolute;
+        bottom: 6px;
+        left: 0px;
+        z-index: 0;
+        opacity: 0.2;
+    }
+
+    span{
+        font-size: 2.6em;
+        font-weight: 700;
+        color: $primary-color;
+        position: relative;
+        z-index: 1;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    p{
+        font-size: 1.35em;
+        line-height: 25px;
+    }
+
+    .lined-title{
+        &::before{
+            right: 0px;
+            left: auto;
+        }
+    
+        span{
+            font-size: 2.3em;
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// TYPOGRAPHY (RESPONSIVE)
+// -----------------------------------------------------------------------------

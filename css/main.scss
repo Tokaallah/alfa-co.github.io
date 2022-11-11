@@ -1,0 +1,71 @@
+@charset 'UTF-8';
+
+// -----------------------------------------------------------------------------
+// CONFIRGURATIONS
+// -----------------------------------------------------------------------------
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins',
+  'abstracts/extends';
+
+// -----------------------------------------------------------------------------
+// RESETS
+// -----------------------------------------------------------------------------
+@import
+  'resets/browser',
+  'resets/fonts';
+
+// -----------------------------------------------------------------------------
+// BASE STUFF
+// -----------------------------------------------------------------------------
+@import
+  'base/fonts',
+  'base/base',
+  'base/typography',
+  'base/keyframes',
+  'base/helpers';
+
+// -----------------------------------------------------------------------------
+// VENDORS
+// -----------------------------------------------------------------------------
+@import
+  '../plugins/@fortawesome/fontawesome-free/css/all.min.css',
+  '../plugins/animate.css/animate.min.css',
+  '../plugins/slick-slider/slick/slick.css',
+  '../plugins/select2/dist/css/select2.min.css';
+@import
+  'vendors/slickSlider',
+  'vendors/fontAwesome',
+  'vendors/select2';
+
+// -----------------------------------------------------------------------------
+// LAYOUTS
+// -----------------------------------------------------------------------------
+@import
+  'layout/navBar',
+  'layout/mobileNavBar',
+  'layout/breadcrumb',
+  'layout/footer';
+
+// -----------------------------------------------------------------------------
+// COMPONENTS
+// -----------------------------------------------------------------------------
+@import
+  'components/buttons',
+  'components/forms',
+  'components/pagination';
+
+// -----------------------------------------------------------------------------
+// PAGES SPECIFIC STYLES
+// -----------------------------------------------------------------------------
+@import
+  'pages/home',
+  'pages/about',
+  'pages/errors',
+  'pages/clients',
+  'pages/partners',
+  'pages/services',
+  'pages/service',
+  'pages/products',
+  'pages/product';

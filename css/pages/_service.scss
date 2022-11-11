@@ -1,0 +1,160 @@
+// -----------------------------------------------------------------------------
+// SERVICE PAGE
+// -----------------------------------------------------------------------------
+.service-page{
+    .img-decoration{
+        width: 400px;
+        height: auto;
+        position: relative;
+
+        &::before{
+            content: '';
+            width: 50%;
+            height: 70%;
+            position: absolute;
+            top: -20px;
+            right: 0px;
+            border: 2px solid $primary-color;
+            background: transparent;
+            z-index: 1;
+        }
+
+        &::after{
+            content: '';
+            width: 30%;
+            height: 30%;
+            position: absolute;
+            bottom: -20px;
+            left: 0px;
+            border: 2px solid $secondary-color;
+            background: transparent;
+            z-index: 1;
+        }
+
+        .service-img{
+            width: calc(100% - 60px);
+            height: auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .decoration-img{
+            position: absolute;
+            width: 20%;
+            height: auto;
+            bottom: -20px;
+            right: 10%;
+            z-index: 1;
+        }
+    }
+
+    .content{
+        width: calc(100% - 450px);
+
+        .title{
+            font-size: 2.2em;
+            font-weight: 600;
+            line-height: 25px;
+        }
+
+        .description{
+            p{
+                font-size: 1.5em;
+                font-weight: 500;
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SERVICE PAGE (RTL)
+// -----------------------------------------------------------------------------
+.rtl{
+    .service-page{
+        .img-decoration{
+            &::before{
+                left: 0px;
+                right: auto;
+            }
+    
+            &::after{
+                right: 0px;
+                left: auto;
+            }
+    
+            .decoration-img{
+                left: 10%;
+                right: auto;
+            }
+        }
+    
+        .content{    
+            .description{
+                p{
+                    font-size: 1.4em;
+                    line-height: 25px;
+                }
+            }
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// SERVICE PAGE (RESPONSIVE)
+// -----------------------------------------------------------------------------
+@media only screen and (max-width: 1000px){
+    .service-page .center-max-width{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        padding-bottom: 0px;
+    }
+
+    .service-page .img-decoration,
+    .rtl .service-page .img-decoration{
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .service-page .img-decoration .service-img{
+        width: calc(100% - 30px);
+        margin-left: 15px;
+    }
+
+    .rtl .service-page .img-decoration .service-img{
+        margin-right: 15px;
+        margin-left: 0px;
+    }
+
+    .service-page .content,
+    .rtl .service-page .content{
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 70px;
+        text-align: center;
+    }
+
+    .service-page .content .lined-title::before{
+        left: 20%;   
+    }
+
+    .rtl .service-page .content .lined-title::before{
+        right: 20%;
+        left: auto;
+    }
+}
